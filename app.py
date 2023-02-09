@@ -67,7 +67,7 @@ st.markdown(download_file(df1_selected_sector), unsafe_allow_html=True)
 # list(df1.Symbol)
 
 if len(df1_selected_sector) < 1:
-    st.write("Please enter a ticker symbol to start")
+    st.subheader("Please select a company sector to start")
 else:
     stock_data = yf.download(
     tickers = list(df1_selected_sector[:25].Symbol),
