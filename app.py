@@ -48,10 +48,10 @@ df1 = load_data()
 sector = df1.groupby('GICS Sector')
 # Isolating sectors from dataframe
 unique_sector = sorted(df1['GICS Sector'].unique())
-selected_sector = st.sidebar.multiselect('Sector', unique_sector)
+selected_sector = st.sidebar.multiselect('Company Sectors', unique_sector)
 # Filtering Data 
 df1_selected_sector = df1[(df1['GICS Sector'].isin(selected_sector))]
-st.subheader("Show companies in selected sector")
+st.subheader("Companies in selected sector")
 st.dataframe(df1_selected_sector)
 # Download data
 def download_file(df):
