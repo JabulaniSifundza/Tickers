@@ -65,7 +65,11 @@ st.markdown(download_file(df1_selected_sector), unsafe_allow_html=True)
 # sector.describe()
 # sector.get_group('Financial')
 # list(df1.Symbol)
-stock_data = yf.download(
+
+if len(df1_selected_sector) < 1:
+    st.write("Please enter a ticker symbol to start")
+else:
+    stock_data = yf.download(
     tickers = list(df1_selected_sector[:25].Symbol),
     period = "ytd",
     interval = "1d",
@@ -75,7 +79,6 @@ stock_data = yf.download(
     threads= True,
     proxy = None
 )
-
 # tickerSymbol2 = st.text_input("Enter the ticker symbol 👇🏾", placeholder="Ticker symbol")
 # df2 = pd.DataFrame(stock_data[Symbol].close)
 # df2['Date'] = df2.index
