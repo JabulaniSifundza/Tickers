@@ -19,8 +19,8 @@ else:
     # Get data on ticker
     symbolData = yf.Ticker(tickerSymbol)
     symbolDf = symbolData.history(period='1d', start='2010-1-31', end='2022-12-31')
-    st.write("Dividends per share")
-    st.line_chart(symbolDf.Dividends)
+    #st.write("Dividends per share")
+    #st.line_chart(symbolDf.Dividends)
     st.markdown("Highs")
     st.line_chart(symbolDf.High)
     st.write("Closing Price")
